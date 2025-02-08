@@ -54,7 +54,7 @@ function reduceNumber(countFreqValue) {
 
 // Function to send data to JSON backend
 function saveLoveData(name, partnersname, percentage) {
-    fetch("http://localhost:5000/save", {
+    fetch("https://github.com/Chaitalykundu/love-calculator/save", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
