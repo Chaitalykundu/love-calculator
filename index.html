@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Calculator</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Love Calculator</h1>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="inputContent">
+          <label for="name">
+            Your Name
+            <input
+              type="text"
+              id="name"
+              value=""
+              placeholder="Enter your name"
+            />
+          </label>
+
+          <br />
+
+          <label for="partnersname">
+            Your Partner's Name
+            <input
+              type="text"
+              id="partnersname"
+              value=""
+              placeholder="Enter your partner's name"
+            />
+          </label>
+        </div>
+
+        <br />
+
+        <button onclick="loveCalculate()">Calculate</button>
+
+        <div class="result">
+          <p id="printResult">Your relationship result here</p>
+          <p id="result"></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
