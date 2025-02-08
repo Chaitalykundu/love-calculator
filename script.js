@@ -54,7 +54,7 @@ function reduceNumber(countFreqValue) {
 
 // Function to send data to JSON backend
 function saveLoveData(name, partnersname, percentage) {
-    fetch("https://chaitalykundu.github.io/love-calculator/entries", {
+    fetch("http://localhost:5000/save", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,3 +69,18 @@ function saveLoveData(name, partnersname, percentage) {
       .then((data) => console.log("Data saved:", data))
       .catch((error) => console.error("Error:", error));
   }
+
+  function fetchStoredResults() {
+    fetch("https://chaitalykundu.github.io/love-calculator/entries")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Stored Results:", data);
+        let resultsDiv = document.getElementById("storedResults");
+        resultsDiv.innerHTML = "<h3>Stored Results:</h3>";
+        data.forEach(entry => {
+          resultsDiv.innerHTML += `<p>${entry.name} ❤️ ${entry.partnersname} = ${entry.percentage}%</p>`;
+        });
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }
+  
